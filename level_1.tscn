@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://d8hl8k1rq66l"]
 
 [ext_resource type="PackedScene" uid="uid://lnylb5j3hsng" path="res://block.tscn" id="1_3hls8"]
+[ext_resource type="Script" path="res://coins.gd" id="1_ihfcg"]
 [ext_resource type="PackedScene" uid="uid://egbhoapo1wwk" path="res://steve.tscn" id="2_hbghi"]
+[ext_resource type="PackedScene" uid="uid://coy24hs246p4w" path="res://coins.tscn" id="4_rka8t"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ilcil"]
 size = Vector3(10, 0.5, 10)
@@ -10,6 +12,7 @@ size = Vector3(10, 0.5, 10)
 size = Vector3(10, 0.5, 10)
 
 [node name="Level1" type="Node3D" unique_id=1123173190]
+script = ExtResource("1_ihfcg")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2121208701]
 transform = Transform3D(1, 0, 0, 0, 0.84554154, 0.53390974, 0, -0.53390974, 0.84554154, 0, 1.908639, 5.709453)
@@ -44,3 +47,6 @@ transform = Transform3D(0.70268416, 0.13057326, -0.6994178, -0.57272416, -0.4794
 
 [node name="Steve" parent="." unique_id=313516250 instance=ExtResource("2_hbghi")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0814805, 0.9209976, 2.6148028)
+
+[node name="Coins" parent="." unique_id=1336586410 instance=ExtResource("4_rka8t")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.666275, 0.4856664, 0)
