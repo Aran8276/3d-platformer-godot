@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://d8hl8k1rq66l"]
+
+[ext_resource type="PackedScene" uid="uid://lnylb5j3hsng" path="res://block.tscn" id="1_3hls8"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ilcil"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3hls8"]
+size = Vector3(10, 0.5, 10)
+
+[node name="Level1" type="Node3D" unique_id=1123173190]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2121208701]
+transform = Transform3D(1, 0, 0, 0, 0.84554154, 0.53390974, 0, -0.53390974, 0.84554154, 0, 3.7603922, 8.1480465)
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1792112171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25950834, 0)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=464197033]
+mesh = SubResource("BoxMesh_ilcil")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=983804140]
+shape = SubResource("BoxShape3D_3hls8")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=706841392]
+transform = Transform3D(0.803888, -0.42686024, -0.41419125, 0, -0.69637644, 0.7176767, -0.5947807, -0.5769317, -0.5598087, -3.6281824, 5.2785635, -4.0965166)
+shadow_enabled = true
+
+[node name="Block1" parent="." unique_id=216532664 instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.85413224, 0.5200559, 0, -0.5200559, 0.85413224, 0, 0, 0, 1, 0, 2.636633, 0)
+
+[node name="Block2" parent="." unique_id=640054792 instance=ExtResource("1_3hls8")]
+transform = Transform3D(-0.80716, -0.49145594, -0.32705304, -0.4126389, 0.07350902, 0.90792376, -0.4221633, 0.86779475, -0.26212743, 0, 4.869671, 0)
+
+[node name="Block3" parent="." unique_id=1683864467 instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.13216987, -0.99122703, 0, 0.99122703, 0.13216987, 0, 0, 0, 1, 1.0220332, 7.8061624, 0)
+
+[node name="Block4" parent="." unique_id=1758820167 instance=ExtResource("1_3hls8")]
+transform = Transform3D(0.70268416, 0.13057326, -0.6994178, -0.57272416, -0.4794613, -0.6649089, -0.42216334, 0.8677948, -0.2621274, -1.0220332, 6.9071345, 0)
