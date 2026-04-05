@@ -2,9 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://lnylb5j3hsng" path="res://block.tscn" id="1_3hls8"]
 [ext_resource type="PackedScene" uid="uid://egbhoapo1wwk" path="res://steve.tscn" id="2_hbghi"]
+[ext_resource type="Environment" uid="uid://dtg6lpcxsptq0" path="res://resources/level_1_environment.tres" id="4_ihfcg"]
 [ext_resource type="PackedScene" uid="uid://coy24hs246p4w" path="res://coins.tscn" id="4_rka8t"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hn12h"]
+albedo_color = Color(0.13, 0.23150009, 1, 1)
+roughness = 0.0
+
 [sub_resource type="BoxMesh" id="BoxMesh_ilcil"]
+material = SubResource("StandardMaterial3D_hn12h")
 size = Vector3(10, 0.5, 10)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_3hls8"]
@@ -26,7 +32,7 @@ mesh = SubResource("BoxMesh_ilcil")
 shape = SubResource("BoxShape3D_3hls8")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=706841392]
-transform = Transform3D(0.803888, -0.42686024, -0.41419125, 0, -0.69637644, 0.7176767, -0.5947807, -0.5769317, -0.5598087, -3.6281824, 5.2785635, -4.0965166)
+transform = Transform3D(0.87181294, 0.35154605, 0.34111238, 2.395773e-08, -0.69637644, 0.7176767, 0.489839, -0.6256798, -0.60710996, 5.7087474, 5.2785635, -4.0965166)
 shadow_enabled = true
 
 [node name="Blocks" type="Node3D" parent="." unique_id=885049984]
@@ -44,7 +50,10 @@ transform = Transform3D(0.13216987, -0.99122703, 0, 0.99122703, 0.13216987, 0, 0
 transform = Transform3D(0.70268416, 0.13057326, -0.6994178, -0.57272416, -0.4794613, -0.6649089, -0.42216334, 0.8677948, -0.2621274, -1.0220332, 6.9071345, 0)
 
 [node name="Steve" parent="." unique_id=313516250 instance=ExtResource("2_hbghi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0814805, 0.9209976, 2.6148028)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0814805, 0.7968683, 2.6148028)
 
 [node name="Coins" parent="." unique_id=1336586410 instance=ExtResource("4_rka8t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.666275, 0.4856664, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1725639726]
+environment = ExtResource("4_ihfcg")
