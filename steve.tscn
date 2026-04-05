@@ -8,6 +8,8 @@ albedo_color = Color(0.6, 1, 0, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_hdy3p"]
 material = SubResource("StandardMaterial3D_bh3ft")
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_bh3ft"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_bh3ft"]
 
 [node name="Steve" type="CharacterBody3D" unique_id=313516250]
@@ -16,6 +18,10 @@ metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2025459444]
 mesh = SubResource("BoxMesh_hdy3p")
+
+[node name="Face" type="MeshInstance3D" parent="MeshInstance3D" unique_id=906321804]
+transform = Transform3D(0.5782788, 0, 0, 0, -2.555614e-09, -0.5782788, 0, 0.058465634, -2.5277368e-08, 0, 0.3918347, 0.5393597)
+mesh = SubResource("CylinderMesh_bh3ft")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1899853985]
 shape = SubResource("BoxShape3D_bh3ft")
