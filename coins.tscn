@@ -2,11 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d3142b7bgbyt1" path="res://coins_animation.gd" id="1_tsooq"]
 [ext_resource type="Script" uid="uid://cmxif3pxw0wyq" path="res://coins_area.gd" id="2_665jj"]
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_tnm4x"]
-top_radius = 0.3
-bottom_radius = 0.3
-height = 0.15
+[ext_resource type="ArrayMesh" uid="uid://fekljseeh3ty" path="res://assets/models/coin_new.res" id="3_88f8t"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_tsooq"]
 size = Vector3(0.8329468, 0.8510742, 0.6159668)
@@ -18,8 +14,8 @@ script = ExtResource("1_tsooq")
 script = ExtResource("2_665jj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=204978759]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-mesh = SubResource("CylinderMesh_tnm4x")
+transform = Transform3D(0.42136136, 0, 0, 0, -2.551121e-08, 0.42136136, 0, -0.5836284, -1.8418291e-08, 0, 0, 0)
+mesh = ExtResource("3_88f8t")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1636159966]
 shape = SubResource("BoxShape3D_tsooq")
