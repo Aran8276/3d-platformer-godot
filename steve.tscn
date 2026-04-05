@@ -12,6 +12,7 @@ material = SubResource("StandardMaterial3D_bh3ft")
 
 [node name="Steve" type="CharacterBody3D" unique_id=313516250]
 script = ExtResource("1_bh3ft")
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=2025459444]
 mesh = SubResource("BoxMesh_hdy3p")
