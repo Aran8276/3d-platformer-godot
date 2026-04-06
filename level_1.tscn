@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://coy24hs246p4w" path="res://coins.tscn" id="4_rka8t"]
 [ext_resource type="MeshLibrary" uid="uid://bb2jjvn3gmuqe" path="res://resources/world-blocks-v1.res" id="5_rka8t"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_rka8t"]
+
 [node name="Level1" type="Node3D" unique_id=1123173190]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=706841392]
@@ -41,3 +43,12 @@ metadata/_editor_floor_ = Vector3(0, -5, 4)
 
 [node name="Steve" parent="." unique_id=313516250 instance=ExtResource("2_hbghi")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.511702, 6.027)
+
+[node name="FallZone" type="Area3D" parent="." unique_id=458987270]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29.151861, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FallZone" unique_id=1216054575]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.5430145, -4.8204136, -7.9529095)
+shape = SubResource("WorldBoundaryShape3D_rka8t")
+
+[connection signal="body_entered" from="FallZone" to="Steve" method="_on_fall_zone_body_entered"]

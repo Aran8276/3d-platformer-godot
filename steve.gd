@@ -57,3 +57,7 @@ func align_with_floor(floor_normal: Vector3) -> void:
 	xform.basis.y = floor_normal
 	xform.basis.x = - xform.basis.z.cross(floor_normal)
 	xform.basis = xform.basis.orthonormalized()
+
+
+func _on_fall_zone_body_entered(_body: Node3D) -> void:
+	get_tree().reload_current_scene()
