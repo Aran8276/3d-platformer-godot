@@ -13,6 +13,7 @@ material = SubResource("StandardMaterial3D_bh3ft")
 [sub_resource type="BoxShape3D" id="BoxShape3D_bh3ft"]
 
 [node name="Steve" type="CharacterBody3D" unique_id=313516250]
+collision_mask = 30
 script = ExtResource("1_bh3ft")
 metadata/_edit_group_ = true
 
@@ -37,3 +38,4 @@ transform = Transform3D(1, 0, 0, 0, 0.9298856, 0.3678486, 0, -0.3678486, 0.92988
 current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="." unique_id=1140027283]
+collision_mask = 2

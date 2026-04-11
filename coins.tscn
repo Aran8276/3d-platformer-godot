@@ -7,10 +7,48 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_tsooq"]
 size = Vector3(0.8329468, 0.8510742, 0.6159668)
 
+[sub_resource type="Animation" id="Animation_88f8t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_jhvp1"]
+resource_name = "bounce"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Area3D/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 1.25, 0), Vector3(0, 0.8, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kywx8"]
+_data = {
+&"RESET": SubResource("Animation_88f8t"),
+&"bounce": SubResource("Animation_jhvp1")
+}
+
 [node name="Coins" type="Node3D" unique_id=1980961881]
 script = ExtResource("1_tsooq")
 
 [node name="Area3D" type="Area3D" parent="." unique_id=1642549181]
+collision_layer = 4
 script = ExtResource("2_665jj")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D" unique_id=204978759]
@@ -20,4 +58,9 @@ mesh = ExtResource("3_88f8t")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1636159966]
 shape = SubResource("BoxShape3D_tsooq")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area3D" unique_id=415494151]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_kywx8")
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="animation_finished" from="Area3D/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
