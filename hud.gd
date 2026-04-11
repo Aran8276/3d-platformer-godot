@@ -1,14 +1,12 @@
-extends Area3D
+extends CanvasLayer
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	$TextureRect/CoinsLabel.text = str(0)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-	# if has_overlapping_bodies():
-	# 	print("overlapping")
-	# 	queue_free()
+	# $TextureRect/CoinsLabel.text = str(Global.coins)

@@ -1,14 +1,11 @@
-extends Area3D
+extends Node3D
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Global.coins = 0
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	pass
-	# if has_overlapping_bodies():
-	# 	print("overlapping")
-	# 	queue_free()
