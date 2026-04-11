@@ -44,7 +44,7 @@ data = {
 metadata/_editor_floor_ = Vector3(0, -5, 4)
 
 [node name="Steve" parent="." unique_id=313516250 instance=ExtResource("2_hbghi")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 2.0498471, 6.027)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0.4498471, 6.027)
 
 [node name="FallZone" type="Area3D" parent="." unique_id=458987270]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -29.151861, 0)
